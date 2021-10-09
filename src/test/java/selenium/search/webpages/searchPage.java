@@ -26,7 +26,7 @@ public class searchPage {
        PageFactory.initElements(driver, this);}
 
     public  boolean isTitleOk () {
-        return driver.getTitle().toString().contentEquals("Googtle");
+        return driver.getTitle().toString().contentEquals("Google");
 
 
     }
