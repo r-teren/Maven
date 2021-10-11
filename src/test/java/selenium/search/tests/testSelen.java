@@ -40,11 +40,11 @@ public class testSelen {
         Assert.assertTrue(googleSearch.isTitleOk());
         log.info("Title Checked.Its Google;");
         googleSearch.searchSelenium();
-        log.info("Searching for Selenium;");
+
 
         resultsPage selCount =new resultsPage(driver);
-        selCount.countSelenium();
-        log.info("Results printed;");
+        selCount.results();
+
     }
 
     @After
