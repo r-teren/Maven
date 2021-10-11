@@ -25,25 +25,20 @@ public class testSelen {
         System.setProperty("webdriver.chrome.driver", projectPath+"\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //URL
-        String searchURL = "https://google.com";
-        driver.get(searchURL);
+        String baseURL = "https://google.com";
+        driver.get(baseURL);
         log.info("Google search page opened;");
-
 
     }
 
     @Test
     public void TestPages () {
 
-        searchPage googleSearch = new searchPage(driver);
-        Assert.assertTrue(googleSearch.isTitleOk());
-        log.info("Title Checked.Its Google;");
-        googleSearch.searchSelenium();
+        searchPage findSel = new searchPage(driver);
+         findSel.searchSelenium();
 
-
-        resultsPage selCount =new resultsPage(driver);
-        selCount.results();
+        resultsPage countSel =new resultsPage(driver);
+        countSel.results();
 
     }
 
