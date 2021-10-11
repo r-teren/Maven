@@ -22,10 +22,9 @@ public class resultsPage {
        PageFactory.initElements(driver, this);}
 
          public void results() {
-        String pageTitle = driver.getTitle();
-            System.out.println("\n"+containSelenium.size() + " Web elements contain text 'Selenium' for page "+ "'"
-                    + pageTitle +"'"+"\n"
-            );
+            String pageTitle = driver.getTitle();
+          System.out.println("\n"+containSelenium.size() + " Web elements contain text 'Selenium' for page "+ "'"
+                    + pageTitle +"'"+"\n");
              log.info("Results printed;");}
 
     }

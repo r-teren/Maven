@@ -4,10 +4,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.slf4j.LoggerFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.Assert;
 import selenium.search.webpages.resultsPage;
 import selenium.search.webpages.searchPage;
 import java.util.concurrent.TimeUnit;
@@ -28,18 +26,16 @@ public class testSelen {
         String baseURL = "https://google.com";
         driver.get(baseURL);
         log.info("Google search page opened;");
-
     }
 
     @Test
     public void TestPages () {
 
-        searchPage findSel = new searchPage(driver);
-         findSel.searchSelenium();
+       searchPage findSel = new searchPage(driver);
+       findSel.searchSelenium();
 
-        resultsPage countSel =new resultsPage(driver);
-        countSel.results();
-
+       resultsPage countSel =new resultsPage(driver);
+       countSel.results();
     }
 
     @After

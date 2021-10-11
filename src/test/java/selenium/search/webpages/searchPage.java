@@ -11,23 +11,20 @@ public class searchPage {
     private WebDriver driver;
     private static final Logger log = LogManager.getLogger(searchPage.class.getName());
 
-
     @FindBy (name = "q")
     private WebElement searchField;
     @FindBy (name = "btnK")
     private WebElement searchButton;
-
 
     public searchPage (WebDriver driver) {
        this.driver=driver;
        driver.getTitle();
        PageFactory.initElements(driver, this);}
 
-
     public  boolean isTitleOk () {
         return driver.getTitle().toString().contentEquals("Google");
-
     }
+
     public void searchSelenium (){
         searchPage googleSearch = new searchPage(driver);
         Assert.assertTrue(googleSearch.isTitleOk());
@@ -36,7 +33,6 @@ public class searchPage {
         searchButton.click();
         log.info("Searching for Selenium;");
     }
-
 }
 
 
