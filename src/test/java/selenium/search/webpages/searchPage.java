@@ -25,11 +25,13 @@ public class searchPage {
         return driver.getTitle().toString().contentEquals("Google");
     }
 
-    public void searchSelenium (){
+    public void verifyTitle () {
         searchPage googleSearch = new searchPage(driver);
         Assert.assertTrue(googleSearch.isTitleOk());
         log.info("Title Checked.Its Google;");
-        searchField.sendKeys("Selenium");
+    }
+    public void searchCriteria (String searchArg){
+        searchField.sendKeys(searchArg);
         searchButton.click();
         log.info("Searching for Selenium;");
     }

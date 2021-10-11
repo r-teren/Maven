@@ -32,7 +32,8 @@ public class testSelen {
     public void TestPages () {
 
        searchPage findSel = new searchPage(driver);
-       findSel.searchSelenium();
+       findSel.verifyTitle();
+       findSel.searchCriteria("Selenium");
 
        resultsPage countSel =new resultsPage(driver);
        countSel.results();
