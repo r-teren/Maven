@@ -1,4 +1,6 @@
 package selenium.search.tests;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import selenium.search.webpages.resultsPage;
 import selenium.search.webpages.searchPage;
+
 import java.util.concurrent.TimeUnit;
 
 
@@ -17,10 +20,9 @@ public class testSelen {
 
 
     @Before
-    public void setup(){
-        //usage of Chrome Driver
+    public void setup() {
         String projectPath = System.getProperty("user.dir");
-        System.setProperty("webdriver.chrome.driver", projectPath+"\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", projectPath + "\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         String baseURL = "https://google.com";
@@ -29,14 +31,13 @@ public class testSelen {
     }
 
     @Test
-    public void TestPages () {
+    public void TestPages() {
 
-       searchPage findSel = new searchPage(driver);
-       findSel.verifyTitle();
-       findSel.searchCriteria("Selenium");
-
-       resultsPage countSel =new resultsPage(driver);
-       countSel.results();
+        searchPage findSel = new searchPage(driver);
+        findSel.verifyTitle();
+        findSel.searchCriteria("Selenium");
+        resultsPage countSel = new resultsPage(driver);
+        countSel.results();
     }
 
     @After
