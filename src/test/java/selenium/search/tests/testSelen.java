@@ -1,6 +1,5 @@
 package selenium.search.tests;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -24,25 +23,31 @@ public class testSelen {
         String projectPath = System.getProperty("user.dir");
         System.setProperty("webdriver.chrome.driver", projectPath + "\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        String baseURL = "https://google.com";
-        driver.get(baseURL);
-        log.info("Google search page opened;");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
     }
 
     @Test
-    public void TestPages() {
+    public void TestPages() throws Exception {
 
         searchPage findSel = new searchPage(driver);
+        findSel.getURL();
         findSel.verifyTitle();
         findSel.searchCriteria("Selenium");
         resultsPage countSel = new resultsPage(driver);
         countSel.results();
+        countSel.screenSh();
+
     }
 
     @After
     public void close() {
+
         driver.close();
         log.info("Browser closed;");
     }
+
 }
+
+

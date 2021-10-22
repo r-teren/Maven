@@ -25,13 +25,15 @@ public class searchPage {
         PageFactory.initElements(driver, this);
     }
 
-    /*public  boolean isTitleOk () {
-      //  return driver.getTitle().toString().contentEquals("Google");
-    }*/
+
+    public void getURL() {
+        String baseURL = "https://google.com";
+        driver.get(baseURL);
+        log.info("Google search page opened;");
+    }
 
     public void verifyTitle() {
-       // searchPage googleSearch = new searchPage(driver);
-        //Assert.assertTrue(googleSearch.isTitleOk());
+
         String titleGoogle = (driver.getTitle());
         Assert.assertEquals(titleGoogle, "Google");
         log.info("Title Checked.Its Google;");
