@@ -16,6 +16,9 @@ import java.util.concurrent.TimeUnit;
 public class testSelen {
     WebDriver driver;
     private static final Logger log = LogManager.getLogger(testSelen.class.getName());
+    searchPage searchPg;
+    resultsPage resultsPg;
+
 
 
     @Before
@@ -25,19 +28,20 @@ public class testSelen {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-
+        searchPg = new searchPage(driver);
+        resultsPg = new resultsPage(driver);
     }
 
     @Test
     public void TestPages() throws Exception {
 
-        searchPage findSel = new searchPage(driver);
-        findSel.getURL();
-        findSel.verifyTitle();
-        findSel.searchCriteria("Selenium");
-        resultsPage countSel = new resultsPage(driver);
-        countSel.results();
-        countSel.screenSh();
+
+        searchPg.getURL();
+        searchPg.verifyTitle();
+        searchPg.searchCriteria("Selenium");
+
+        resultsPg.results();
+        resultsPg.screenSh();
 
     }
 
