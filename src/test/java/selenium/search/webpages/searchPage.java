@@ -35,7 +35,7 @@ public class searchPage {
     public void verifyTitle() {
 
         String titleGoogle = (driver.getTitle());
-        Assert.assertEquals(titleGoogle, "Google");
+        Assert.assertEquals("Google", titleGoogle);
         log.info("Title Checked.Its Google;");
     }
 

@@ -1,0 +1,6 @@
+19:35:05.697 INFO  searchPage -Google search page opened;
+19:35:05.722 INFO  searchPage -Title Checked.Its Google;
+19:35:07.599 INFO  searchPage -Searching for Selenium;
+19:35:07.725 INFO  searchPage -Results printed;
+19:35:08.169 INFO  searchPage -Screenshot taken;
+19:35:08.331 INFO  testSelen -Browser closed;
